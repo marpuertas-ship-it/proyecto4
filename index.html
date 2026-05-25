@@ -3,100 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test de Personalidad</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>RetoRuleta - Juega con Retos Épicos</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- HEADER -->
+<header class="header">
     <div class="container">
-        <h1>Test de Personalidad</h1>
-        <div id="intro">
-            <p>Bienvenido al test de personalidad. Este test se divide en varios apartados psicológicos. Responde honestamente para obtener tu perfil.</p>
-            <button id="start-btn">Comenzar Test</button>
+        <div class="header__logo">
+            <a href="index.html" class="logo">
+                <span class="logo-text">RetoRuleta</span>
+            </a>
         </div>
-        <div id="test" style="display: none;">
-            <div id="section-1" class="section">
-                <h2>Apartado 1: Introversión vs Extroversión</h2>
-                <div class="question">
-                    <p>1. ¿Prefieres pasar tiempo solo o con amigos?</p>
-                    <label><input type="radio" name="q1" value="I"> Solo</label>
-                    <label><input type="radio" name="q1" value="E"> Con amigos</label>
-                </div>
-                <div class="question">
-                    <p>2. ¿Te sientes energizado después de socializar?</p>
-                    <label><input type="radio" name="q2" value="E"> Sí</label>
-                    <label><input type="radio" name="q2" value="I"> No</label>
-                </div>
-                <div class="question">
-                    <p>3. ¿Disfrutas de actividades en grupo?</p>
-                    <label><input type="radio" name="q3" value="E"> Sí</label>
-                    <label><input type="radio" name="q3" value="I"> No</label>
-                </div>
-                <button class="next-btn" data-next="2">Siguiente</button>
+        <nav class="nav">
+            <a href="comunidad.html" class="nav-link active">Community</a>
+            <a href="ruleta.html" class="nav-link">Challenges</a>
+            <a href="about.html" class="nav-link">About Milli</a>
+            <a href="contacto.html" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">Social Media</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero__media">
+        <div class="hero__image-placeholder"></div>
+    </div>
+    <div class="hero__scroll-indicator">
+        <span>↓</span>
+    </div>
+</section>
+
+<!-- COMMUNITY SECTION -->
+<section class="section-community">
+    <div class="container">
+        <h2 class="section-title">COMMUNITY</h2>
+        <a href="comunidad.html" class="btn btn-outline btn-sm">JOIN</a>
+        <div class="community-grid">
+            <div class="community-card">
+                <div class="card__image-placeholder"></div>
             </div>
-            <div id="section-2" class="section" style="display: none;">
-                <h2>Apartado 2: Sensación vs Intuición</h2>
-                <div class="question">
-                    <p>1. ¿Prefieres hechos concretos o ideas abstractas?</p>
-                    <label><input type="radio" name="q4" value="S"> Hechos</label>
-                    <label><input type="radio" name="q4" value="N"> Ideas</label>
-                </div>
-                <div class="question">
-                    <p>2. ¿Te enfocas en el presente o en el futuro?</p>
-                    <label><input type="radio" name="q5" value="S"> Presente</label>
-                    <label><input type="radio" name="q5" value="N"> Futuro</label>
-                </div>
-                <div class="question">
-                    <p>3. ¿Valoras la experiencia práctica?</p>
-                    <label><input type="radio" name="q6" value="S"> Sí</label>
-                    <label><input type="radio" name="q6" value="N"> No</label>
-                </div>
-                <button class="next-btn" data-next="3">Siguiente</button>
+            <div class="community-card">
+                <div class="card__image-placeholder"></div>
             </div>
-            <div id="section-3" class="section" style="display: none;">
-                <h2>Apartado 3: Pensamiento vs Sentimiento</h2>
-                <div class="question">
-                    <p>1. ¿Tomas decisiones basadas en lógica o emociones?</p>
-                    <label><input type="radio" name="q7" value="T"> Lógica</label>
-                    <label><input type="radio" name="q7" value="F"> Emociones</label>
-                </div>
-                <div class="question">
-                    <p>2. ¿Priorizas la justicia o la armonía?</p>
-                    <label><input type="radio" name="q8" value="T"> Justicia</label>
-                    <label><input type="radio" name="q8" value="F"> Armonía</label>
-                </div>
-                <div class="question">
-                    <p>3. ¿Eres más crítico o compasivo?</p>
-                    <label><input type="radio" name="q9" value="T"> Crítico</label>
-                    <label><input type="radio" name="q9" value="F"> Compasivo</label>
-                </div>
-                <button class="next-btn" data-next="4">Siguiente</button>
+            <div class="community-card">
+                <div class="card__image-placeholder"></div>
             </div>
-            <div id="section-4" class="section" style="display: none;">
-                <h2>Apartado 4: Juicio vs Percepción</h2>
-                <div class="question">
-                    <p>1. ¿Prefieres planes estructurados o flexibilidad?</p>
-                    <label><input type="radio" name="q10" value="J"> Estructurados</label>
-                    <label><input type="radio" name="q10" value="P"> Flexibilidad</label>
-                </div>
-                <div class="question">
-                    <p>2. ¿Te sientes cómodo con deadlines?</p>
-                    <label><input type="radio" name="q11" value="J"> Sí</label>
-                    <label><input type="radio" name="q11" value="P"> No</label>
-                </div>
-                <div class="question">
-                    <p>3. ¿Disfrutas de rutinas o cambios?</p>
-                    <label><input type="radio" name="q12" value="J"> Rutinas</label>
-                    <label><input type="radio" name="q12" value="P"> Cambios</label>
-                </div>
-                <button id="calculate-btn">Calcular Perfil</button>
-            </div>
-        </div>
-        <div id="result" style="display: none;">
-            <h2>Tu Perfil de Personalidad</h2>
-            <p id="profile-text"></p>
-            <button id="restart-btn">Reiniciar Test</button>
         </div>
     </div>
-    <script src="script.js"></script>
+</section>
+
+<!-- CHALLENGES SECTION -->
+<section class="section-challenges">
+    <div class="container">
+        <h2 class="section-title">CHALLENGES</h2>
+        <div class="challenges-row">
+            <a href="ruleta.html" class="challenge-circle">
+                <div class="circle__image-placeholder"></div>
+                <span class="circle__label">—</span>
+            </a>
+            <a href="ruleta.html" class="challenge-circle">
+                <div class="circle__image-placeholder"></div>
+                <span class="circle__label">—</span>
+            </a>
+            <a href="ruleta.html" class="challenge-circle challenge-circle--large">
+                <div class="circle__image-placeholder"></div>
+                <span class="circle__label">—</span>
+            </a>
+            <a href="ruleta.html" class="challenge-circle">
+                <div class="circle__image-placeholder"></div>
+                <span class="circle__label">—</span>
+            </a>
+            <a href="ruleta.html" class="challenge-circle">
+                <div class="circle__image-placeholder"></div>
+                <span class="circle__label">—</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT MILLI SECTION -->
+<section class="section-about">
+    <div class="container">
+        <h2 class="section-title">ABOUT MILLI</h2>
+        <div class="about__media">
+            <div class="about__image-placeholder"></div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section-cta">
+    <div class="container">
+        <a href="ruleta.html" class="btn btn-cta">Comenzar Ahora</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer__inner">
+        <p>&copy; 2024 RetoRuleta</p>
+        <div class="footer-links">
+            <a href="#">Aviso Legal</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Cookies</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Banner de Cookies -->
+<div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+        <p>Utilizamos cookies para mejorar tu experiencia.</p>
+        <div class="cookie-buttons">
+            <button id="acceptCookies" class="btn btn-primary">Aceptar</button>
+            <button id="rejectCookies" class="btn btn-secondary">Rechazar</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>

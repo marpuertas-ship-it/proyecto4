@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - RetoRuleta</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container header__inner">
+        <div class="logo">
+            <span class="logo-icon">🎡</span>
+            <span class="logo-text">RetoRuleta</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="comunidad.html" class="nav-link active">Community</a>
+            <a href="ruleta.html" class="nav-link">Challenges</a>
+            <a href="about.html" class="nav-link">About Milli</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero__media">
+        <div class="hero__image-placeholder"></div>
+    </div>
+</section>
+
+<!-- PAGE TITLE -->
+<section class="page-title-section">
+    <div class="container">
+        <h1 class="page-title">COMMUNITY</h1>
+    </div>
+</section>
+
+<!-- COMMUNITY CARDS GRID -->
+<section class="section-community-page">
+    <div class="container">
+        <div class="community-grid community-grid--3col">
+            <div class="community-card community-card--tall">
+                <div class="card__image-placeholder"></div>
+            </div>
+            <div class="community-card community-card--tall">
+                <div class="card__image-placeholder"></div>
+            </div>
+            <div class="community-card community-card--tall">
+                <div class="card__image-placeholder"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FORMULARIO / CONTENIDO -->
+<section class="section-community-form">
+    <div class="container">
+        <div class="community-content-block">
+            <form id="comentarioForm" class="comentario-form">
+                <div class="form-group">
+                    <label for="nombre">Tu nombre</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan">
+                </div>
+                <div class="form-group">
+                    <label for="comentario">Tu comentario</label>
+                    <textarea id="comentario" name="comentario" required placeholder="Comparte tu reto completado..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Publicar</button>
+            </form>
+            <div id="comentariosList" class="comentarios-lista">
+                <div class="comentario-item">
+                    <div class="comentario-header">
+                        <strong>María</strong>
+                        <span class="comentario-fecha">Hace 2 horas</span>
+                    </div>
+                    <p>¡Completé el reto de cantar una canción al revés! Fue muy divertido 😂</p>
+                </div>
+                <div class="comentario-item">
+                    <div class="comentario-header">
+                        <strong>Carlos</strong>
+                        <span class="comentario-fecha">Hace 5 horas</span>
+                    </div>
+                    <p>Me encanta esta ruleta, cada día intento nuevos retos. ¡Altamente recomendado!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer__inner">
+        <p>&copy; 2024 RetoRuleta</p>
+        <div class="footer-links">
+            <a href="#">Aviso Legal</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Cookies</a>
+        </div>
+    </div>
+</footer>
+
+<div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+        <p>Utilizamos cookies para mejorar tu experiencia.</p>
+        <div class="cookie-buttons">
+            <button id="acceptCookies" class="btn btn-primary">Aceptar</button>
+            <button id="rejectCookies" class="btn btn-secondary">Rechazar</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
