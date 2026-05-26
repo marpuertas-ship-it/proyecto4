@@ -9,38 +9,33 @@
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="container header__inner">
-        <div class="logo">
-            <span class="logo-icon">🎡</span>
-            <span class="logo-text">RetoRuleta</span>
+<section class="hero hero--community">
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🎡</span>
+                    <span class="logo-text">RetoRuleta</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="comunidad.html" class="nav-link active">Community</a>
+                <a href="ruleta.html" class="nav-link">Challenges</a>
+                <a href="about.html" class="nav-link">About Milli</a>
+                <a href="#" class="nav-link">Social Media</a>
+            </nav>
         </div>
-        <nav class="nav">
-            <a href="index.html" class="nav-link">Inicio</a>
-            <a href="comunidad.html" class="nav-link active">Community</a>
-            <a href="ruleta.html" class="nav-link">Challenges</a>
-            <a href="about.html" class="nav-link">About Milli</a>
-        </nav>
-    </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="hero__media">
-        <div class="hero__image-placeholder"></div>
-    </div>
-</section>
-
-<!-- PAGE TITLE -->
-<section class="page-title-section">
-    <div class="container">
+    </header>
+    <div class="hero__title">
         <h1 class="page-title">COMMUNITY</h1>
     </div>
+    <a class="hero__scroll-indicator" href="#main-content">
+        <span>↓</span>
+    </a>
 </section>
 
 <!-- COMMUNITY CARDS GRID -->
-<section class="section-community-page">
+<section id="main-content" class="section-community-page">
     <div class="container">
         <div class="community-grid community-grid--3col">
             <div class="community-card community-card--tall">
@@ -56,37 +51,69 @@
     </div>
 </section>
 
-<!-- FORMULARIO / CONTENIDO -->
-<section class="section-community-form">
+<!-- FORMULARIO CUENTA / LOGIN -->
+<section class="section-auth">
     <div class="container">
-        <div class="community-content-block">
-            <form id="comentarioForm" class="comentario-form">
-                <div class="form-group">
-                    <label for="nombre">Tu nombre</label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan">
-                </div>
-                <div class="form-group">
-                    <label for="comentario">Tu comentario</label>
-                    <textarea id="comentario" name="comentario" required placeholder="Comparte tu reto completado..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Publicar</button>
-            </form>
-            <div id="comentariosList" class="comentarios-lista">
-                <div class="comentario-item">
-                    <div class="comentario-header">
-                        <strong>María</strong>
-                        <span class="comentario-fecha">Hace 2 horas</span>
-                    </div>
-                    <p>¡Completé el reto de cantar una canción al revés! Fue muy divertido 😂</p>
-                </div>
-                <div class="comentario-item">
-                    <div class="comentario-header">
-                        <strong>Carlos</strong>
-                        <span class="comentario-fecha">Hace 5 horas</span>
-                    </div>
-                    <p>Me encanta esta ruleta, cada día intento nuevos retos. ¡Altamente recomendado!</p>
-                </div>
+        <div class="auth-box">
+            <!-- Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchTab('registro')">Crear cuenta</button>
+                <button class="auth-tab" onclick="switchTab('login')">Iniciar sesión</button>
             </div>
+
+            <!-- Registro -->
+            <div class="auth-form" id="form-registro">
+                <h2 class="auth-title">Únete a la comunidad</h2>
+                <p class="auth-subtitle">Crea tu cuenta y comparte tus retos</p>
+                <div class="form-group">
+                    <label for="reg-nombre">Nombre de usuario</label>
+                    <input type="text" id="reg-nombre" placeholder="Ej: Milli123" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-pass">Contraseña</label>
+                    <input type="password" id="reg-pass" placeholder="Mínimo 8 caracteres" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-pass2">Confirmar contraseña</label>
+                    <input type="password" id="reg-pass2" placeholder="Repite tu contraseña" required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="reg-terms">
+                    <label for="reg-terms">Acepto los <a href="#">términos y condiciones</a></label>
+                </div>
+                <button class="btn btn-auth" onclick="handleRegistro()">Crear cuenta</button>
+                <p class="auth-switch">¿Ya tienes cuenta? <a href="#" onclick="switchTab('login')">Inicia sesión</a></p>
+            </div>
+
+            <!-- Login -->
+            <div class="auth-form auth-form--hidden" id="form-login">
+                <h2 class="auth-title">Bienvenid@ de nuevo</h2>
+                <p class="auth-subtitle">Accede a tu cuenta de la comunidad</p>
+                <div class="form-group">
+                    <label for="log-email">Email</label>
+                    <input type="email" id="log-email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="log-pass">Contraseña</label>
+                    <input type="password" id="log-pass" placeholder="Tu contraseña" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-check">
+                        <input type="checkbox" id="log-remember">
+                        <label for="log-remember">Recuérdame</label>
+                    </div>
+                    <a href="#" class="auth-forgot">¿Olvidaste tu contraseña?</a>
+                </div>
+                <button class="btn btn-auth" onclick="handleLogin()">Iniciar sesión</button>
+                <p class="auth-switch">¿No tienes cuenta? <a href="#" onclick="switchTab('registro')">Regístrate</a></p>
+            </div>
+
+            <!-- Mensaje feedback -->
+            <div class="auth-feedback" id="auth-feedback"></div>
         </div>
     </div>
 </section>
@@ -113,6 +140,7 @@
     </div>
 </div>
 
+<script src="js/auth.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

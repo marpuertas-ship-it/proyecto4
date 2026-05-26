@@ -9,96 +9,79 @@
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="container header__inner">
-        <div class="logo">
-            <span class="logo-icon">🎡</span>
-            <span class="logo-text">RetoRuleta</span>
+<section class="hero hero--ruleta">
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🎡</span>
+                    <span class="logo-text">RetoRuleta</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="comunidad.html" class="nav-link">Community</a>
+                <a href="ruleta.html" class="nav-link active">Challenges</a>
+                <a href="about.html" class="nav-link">About Milli</a>
+                <a href="#" class="nav-link">Social Media</a>
+            </nav>
         </div>
-        <nav class="nav">
-            <a href="index.html" class="nav-link">Inicio</a>
-            <a href="comunidad.html" class="nav-link">Community</a>
-            <a href="ruleta.html" class="nav-link active">Challenges</a>
-            <a href="about.html" class="nav-link">About Milli</a>
-        </nav>
-    </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="hero__media">
-        <div class="hero__image-placeholder"></div>
-    </div>
-</section>
-
-<!-- PAGE TITLE -->
-<section class="page-title-section">
-    <div class="container">
+    </header>
+    <div class="hero__title">
         <h1 class="page-title">CHALLENGES</h1>
     </div>
+    <a class="hero__scroll-indicator" href="#main-content">
+        <span>↓</span>
+    </a>
 </section>
 
-<!-- CHALLENGES MASONRY -->
-<section class="section-challenges-page">
-    <div class="container">
-        <div class="challenges-masonry">
-            <!-- Fila superior: 2 círculos -->
-            <div class="challenges-masonry__row challenges-masonry__row--top">
-                <div class="challenge-circle-item">
-                    <button class="challenge-circle-btn" onclick="girarRuleta()">
-                        <div class="circle__image-placeholder"></div>
-                    </button>
-                    <span class="circle__label">—</span>
-                </div>
-                <div class="challenge-circle-item">
-                    <button class="challenge-circle-btn" onclick="girarRuleta()">
-                        <div class="circle__image-placeholder"></div>
-                    </button>
-                    <span class="circle__label">—</span>
-                </div>
-            </div>
-            <!-- Centro: 1 círculo grande -->
-            <div class="challenges-masonry__row challenges-masonry__row--center">
-                <div class="challenge-circle-item">
-                    <button class="challenge-circle-btn challenge-circle-btn--large" id="spinBtn" onclick="girarRuleta()">
-                        <div class="circle__image-placeholder"></div>
-                    </button>
-                    <span class="circle__label">—</span>
-                </div>
-            </div>
-            <!-- Fila inferior: 2 círculos -->
-            <div class="challenges-masonry__row challenges-masonry__row--bottom">
-                <div class="challenge-circle-item">
-                    <button class="challenge-circle-btn" onclick="girarRuleta()">
-                        <div class="circle__image-placeholder"></div>
-                    </button>
-                    <span class="circle__label">—</span>
-                </div>
-                <div class="challenge-circle-item">
-                    <button class="challenge-circle-btn" onclick="girarRuleta()">
-                        <div class="circle__image-placeholder"></div>
-                    </button>
-                    <span class="circle__label">—</span>
-                </div>
-            </div>
+<!-- RULETAS -->
+<section id="main-content" class="section-ruletas">
+    <div class="ruletas-scatter">
+
+        <!-- Ruleta 1: Retos Físicos — arriba izquierda -->
+        <div class="ruleta-item" style="top: 3%; left: 1%;">
+            <canvas class="ruleta-canvas" id="ruleta-0" width="380" height="380"></canvas>
+            <button class="ruleta-btn" onclick="spinWheel(0)">▶ Girar</button>
+            <div class="ruleta-result" id="result-0"></div>
+            <span class="ruleta-tema">Retos Físicos</span>
         </div>
 
-        <!-- Resultado del reto -->
-        <div id="resultadoReto" class="resultado-reto">
-            <p>Pulsa un reto para girar la ruleta</p>
+        <!-- Ruleta 2: Retos Sociales — arriba derecha -->
+        <div class="ruleta-item" style="top: 5%; right: 1%;">
+            <canvas class="ruleta-canvas" id="ruleta-1" width="360" height="360"></canvas>
+            <button class="ruleta-btn" onclick="spinWheel(1)">▶ Girar</button>
+            <div class="ruleta-result" id="result-1"></div>
+            <span class="ruleta-tema">Retos Sociales</span>
         </div>
+
+        <!-- Ruleta 3: Retos Creativos — centro -->
+        <div class="ruleta-item" style="top: 34%; left: 50%; transform: translateX(-50%);">
+            <canvas class="ruleta-canvas" id="ruleta-2" width="440" height="440"></canvas>
+            <button class="ruleta-btn" onclick="spinWheel(2)">▶ Girar</button>
+            <div class="ruleta-result" id="result-2"></div>
+            <span class="ruleta-tema">Retos Creativos</span>
+        </div>
+
+        <!-- Ruleta 4: Retos de Comida — abajo izquierda -->
+        <div class="ruleta-item" style="bottom: 4%; left: 2%;">
+            <canvas class="ruleta-canvas" id="ruleta-3" width="370" height="370"></canvas>
+            <button class="ruleta-btn" onclick="spinWheel(3)">▶ Girar</button>
+            <div class="ruleta-result" id="result-3"></div>
+            <span class="ruleta-tema">Retos de Comida</span>
+        </div>
+
+        <!-- Ruleta 5: Retos de Tecnología — abajo derecha -->
+        <div class="ruleta-item" style="bottom: 3%; right: 1%;">
+            <canvas class="ruleta-canvas" id="ruleta-4" width="360" height="360"></canvas>
+            <button class="ruleta-btn" onclick="spinWheel(4)">▶ Girar</button>
+            <div class="ruleta-result" id="result-4"></div>
+            <span class="ruleta-tema">Retos de Tecnología</span>
+        </div>
+
     </div>
 </section>
 
-<!-- HISTORIAL / IMAGEN -->
-<section class="section-challenges-extra">
-    <div class="container">
-        <div class="challenges-extra__media">
-            <div class="challenges-extra__image-placeholder"></div>
-        </div>
-    </div>
-</section>
+
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -122,7 +105,110 @@
     </div>
 </div>
 
+<script>
+    var RULETAS = [
+        { retos: ['10 sentadillas','Plancha 30s','20 saltos','Puntillas 1min','Baila 2min','15 flexiones','Corre en sitio','Equilibrio 30s'] },
+        { retos: ['Llama a un amigo','Manda un meme','Pregunta incómoda','Di un cumplido','Imita a alguien','Cuenta un chiste','Foto con extraño','Karaoke improv'] },
+        { retos: ['Dibuja en 60s','Inventa canción','Foto artística','Escribe un poema','Diseña personaje','Actúa una escena','Crea un baile','Pinta con dedos'] },
+        { retos: ['Come algo picante','Mezcla rara','Come sin manos','Adivina ingrediente','Inventa receta','Come en 30s','Prueba algo nuevo','Batido misterioso'] },
+        { retos: ['Sin móvil 1h','Aprende truco','Graba un vídeo','Busca algo viral','Aprende shortcut','Diseña un meme','Cambia foto perfil','Alarma rara'] }
+    ];
+    var COLORS = ['#df9a31','#cd5796','#704b93','#98bc39','#61aea4','#ede53b','#df9a31','#61aea4'];
+    var angles = [0,0,0,0,0];
+    var spinning = [false,false,false,false,false];
+
+    function drawWheel(idx) {
+        var canvas = document.getElementById('ruleta-' + idx);
+        if (!canvas) return;
+        var ctx = canvas.getContext('2d');
+        var cx = canvas.width / 2;
+        var cy = canvas.height / 2;
+        var r = cx - 10;
+        var retos = RULETAS[idx].retos;
+        var n = retos.length;
+        var arc = (2 * Math.PI) / n;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.rotate(angles[idx]);
+
+        for (var i = 0; i < n; i++) {
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.arc(0, 0, r, i * arc, (i+1) * arc);
+            ctx.closePath();
+            ctx.fillStyle = COLORS[i % COLORS.length];
+            ctx.fill();
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            ctx.save();
+            ctx.rotate(i * arc + arc / 2);
+            ctx.textAlign = 'right';
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold ' + Math.round(r * 0.12) + 'px sans-serif';
+            var words = retos[i].split(' ');
+            var lineH = r * 0.15;
+            var offset = -(words.length - 1) * lineH / 2;
+            for (var w = 0; w < words.length; w++) {
+                ctx.fillText(words[w], r - 12, offset + w * lineH + 4);
+            }
+            ctx.restore();
+        }
+
+        // Centro blanco
+        ctx.beginPath();
+        ctx.arc(0, 0, r * 0.08, 0, 2 * Math.PI);
+        ctx.fillStyle = 'white';
+        ctx.fill();
+        ctx.restore();
+
+        // Puntero
+        ctx.fillStyle = '#333';
+        ctx.beginPath();
+        ctx.moveTo(cx, 2);
+        ctx.lineTo(cx - 12, 22);
+        ctx.lineTo(cx + 12, 22);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    function spinWheel(idx) {
+        if (spinning[idx]) return;
+        spinning[idx] = true;
+        document.getElementById('result-' + idx).textContent = '';
+        var duration = 3000 + Math.random() * 2000;
+        var extra = Math.PI * 2 * (6 + Math.random() * 6);
+        var start = angles[idx];
+        var end = start + extra;
+        var t0 = performance.now();
+
+        function step(now) {
+            var p = Math.min((now - t0) / duration, 1);
+            var e = 1 - Math.pow(1 - p, 3);
+            angles[idx] = start + (end - start) * e;
+            drawWheel(idx);
+            if (p < 1) {
+                requestAnimationFrame(step);
+            } else {
+                spinning[idx] = false;
+                var n = RULETAS[idx].retos.length;
+                var arc = (2 * Math.PI) / n;
+                var norm = ((angles[idx] % (Math.PI*2)) + Math.PI*2) % (Math.PI*2);
+                var winner = Math.floor(((Math.PI*2 - norm) % (Math.PI*2)) / arc) % n;
+                document.getElementById('result-' + idx).textContent = '🎯 ' + RULETAS[idx].retos[winner];
+            }
+        }
+        requestAnimationFrame(step);
+    }
+
+    // Dibujar al cargar
+    window.onload = function() {
+        for (var i = 0; i < 5; i++) drawWheel(i);
+    };
+</script>
 <script src="js/main.js"></script>
 </body>
 </html>
-

@@ -83,7 +83,10 @@ body {
 .header {
     background: transparent;
     color: var(--text-dark);
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
 }
 
@@ -815,6 +818,8 @@ section h2 {
     color: white;
     animation: bounce 1.5s infinite;
     z-index: 2;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 @keyframes bounce {
@@ -1102,54 +1107,51 @@ section h2 {
 
 /* --- About page --- */
 .about-main-image {
-    padding: var(--spacing-lg) 0;
+    width: 100%;
 }
 
 .about__image-large-placeholder {
     width: 100%;
-    height: 380px;
+    height: 320px;
     background: var(--dark-bg);
-    border-radius: var(--radius-lg);
 }
 
 .about-bento {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-xl) var(--spacing-md);
 }
 
 .bento-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto;
     gap: var(--spacing-md);
 }
 
 .bento-block {
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    background: white;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    background: var(--dark-bg);
 }
 
 .bento__placeholder {
-    background: var(--dark-bg);
     width: 100%;
     height: 100%;
-    min-height: 80px;
+    background: var(--dark-bg);
 }
 
-.bento-block--wide {
-    grid-column: span 3;
-    height: 60px;
-}
-
-.bento-block--medium {
-    grid-column: span 2;
+/* Fila 1: ancho completo */
+.bento-block--full {
+    grid-column: 1 / -1;
     height: 80px;
+}
+
+/* Fila 2 y 3: grande + pequeño */
+.bento-block--large {
+    height: 160px;
 }
 
 .bento-block--small {
-    grid-column: span 1;
-    height: 80px;
+    height: 160px;
 }
 
 .about-contact {
@@ -1298,4 +1300,339 @@ section h2 {
         width: 100%;
         justify-content: center;
     }
+}
+
+/* ============================================
+   FONDO PÁGINA PRINCIPAL (todas las secciones excepto hero)
+   ============================================ */
+.section-community,
+.section-challenges,
+.section-about,
+.section-cta,
+.footer {
+    
+}
+
+/* ============================================
+   SECCIONES A PANTALLA COMPLETA - PÁGINA PRINCIPAL
+   ============================================ */
+.section-community,
+.section-challenges,
+.section-about,
+.section-cta {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.section-community .container,
+.section-challenges .container,
+.section-about .container,
+.section-cta .container {
+    width: 100%;
+}
+
+/* Título community centrado */
+.section-community {
+    text-align: center;
+}
+
+.section-community .section-title {
+    text-align: center;
+    width: 100%;
+}
+
+/* ============================================
+   H1 EN HERO - CENTRADO ABAJO (páginas internas)
+   ============================================ */
+.hero__title {
+    position: absolute;
+    bottom: 5rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero__title .page-title {
+    color: white;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 800;
+    line-height: 1;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+/* ============================================
+   SECCIÓN RULETAS
+   ============================================ */
+.section-ruletas {
+    position: relative;
+    height: 200vh;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.ruletas-scatter {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ruleta-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.ruleta-canvas {
+    display: block;
+    cursor: pointer;
+}
+
+.ruleta-btn {
+    background: #df9a31;
+    border: none;
+    border-radius: var(--radius-full);
+    padding: 0.5rem 1.6rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 700;
+    color: white;
+    transition: transform var(--transition-fast);
+}
+
+.ruleta-btn:hover {
+    transform: scale(1.08);
+}
+
+.ruleta-result {
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    max-width: 280px;
+    min-height: 1.2em;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.ruleta-tema {
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+    .section-ruletas {
+        height: auto;
+        min-height: 100vh;
+    }
+    .ruletas-scatter {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        padding: 3rem 1rem;
+    }
+    .ruleta-item {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+    }
+}
+
+/* ============================================
+   SECCIÓN AUTH - LOGIN / REGISTRO
+   ============================================ */
+.section-auth {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    
+    overflow: hidden;
+}
+
+.auth-box {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-tabs {
+    display: flex;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 0.6rem;
+    background: #f3f3f3;
+    border: none;
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: all var(--transition-fast);
+    border-bottom: 3px solid transparent;
+}
+
+.auth-tab.active {
+    background: white;
+    color: #df9a31;
+    border-bottom: 3px solid #df9a31;
+}
+
+.auth-form {
+    padding: var(--spacing-md) var(--spacing-lg) 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.auth-form--hidden {
+    display: none;
+}
+
+.auth-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.auth-subtitle {
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+    margin: 0;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+}
+
+.form-check a {
+    color: #df9a31;
+    text-decoration: none;
+}
+
+.auth-forgot {
+    font-size: var(--font-size-sm);
+    color: #df9a31;
+    text-decoration: none;
+}
+
+.auth-forgot:hover {
+    color: #704b93;
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 0.6rem;
+    background: #df9a31;
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-auth:hover {
+    background: #704b93;
+}
+
+.auth-switch {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+    margin: 0 0 0.25rem;
+}
+
+.auth-switch a {
+    color: #df9a31;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-switch a:hover {
+    color: #704b93;
+}
+
+.auth-feedback {
+    margin: 0 var(--spacing-lg) 0.4rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-align: center;
+    min-height: 1em;
+}
+
+.auth-feedback--error {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.auth-feedback--ok {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+/* Fondo hero página Community */
+.hero--community {
+    background-image: url('../assets/fondo_community.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Fondo hero página Ruleta */
+.hero--ruleta {
+    background-image: url('../assets/fondo_ruleta.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Fondo hero página About */
+.hero--about {
+    background-image: url('../assets/fondo_about.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
