@@ -13,16 +13,13 @@
     <header class="header">
         <div class="container">
             <div class="header__logo">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon">🎡</span>
-                    <span class="logo-text">RetoRuleta</span>
-                </a>
+                <a href="index.html" class="logo"><img src="assets/milli_logo.png" alt="Milli" class="header-logo-img"></a>
             </div>
             <nav class="nav">
                 <a href="comunidad.html" class="nav-link">Community</a>
                 <a href="ruleta.html" class="nav-link active">Challenges</a>
                 <a href="about.html" class="nav-link">About Milli</a>
-                <a href="#" class="nav-link">Social Media</a>
+                <a href="socialmedia.html" class="nav-link">Social Media</a>
             </nav>
         </div>
     </header>
@@ -34,48 +31,75 @@
     </a>
 </section>
 
-<!-- RULETAS -->
+<!-- RULETAS - SECCIÓN 1 -->
 <section id="main-content" class="section-ruletas">
-    <div class="ruletas-scatter">
+    <div class="ruletas-grid">
 
-        <!-- Ruleta 1: Retos Físicos — arriba izquierda -->
-        <div class="ruleta-item" style="top: 3%; left: 1%;">
-            <canvas class="ruleta-canvas" id="ruleta-0" width="380" height="380"></canvas>
-            <button class="ruleta-btn" onclick="spinWheel(0)">▶ Girar</button>
-            <div class="ruleta-result" id="result-0"></div>
+        <div class="ruleta-item">
+            <div class="ruleta-wrap">
+                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
+                <canvas class="ruleta-canvas" id="ruleta-0" width="340" height="340"></canvas>
+                <div class="ruleta-resultado" id="result-0"></div>
+            </div>
             <span class="ruleta-tema">Retos Físicos</span>
+            <button class="ruleta-btn" onclick="spinWheel(0)">▶ Girar</button>
         </div>
 
-        <!-- Ruleta 2: Retos Sociales — arriba derecha -->
-        <div class="ruleta-item" style="top: 5%; right: 1%;">
-            <canvas class="ruleta-canvas" id="ruleta-1" width="360" height="360"></canvas>
-            <button class="ruleta-btn" onclick="spinWheel(1)">▶ Girar</button>
-            <div class="ruleta-result" id="result-1"></div>
+        <div class="ruleta-item">
+            <div class="ruleta-wrap">
+                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
+                <canvas class="ruleta-canvas" id="ruleta-1" width="340" height="340"></canvas>
+                <div class="ruleta-resultado" id="result-1"></div>
+            </div>
             <span class="ruleta-tema">Retos Sociales</span>
+            <button class="ruleta-btn" onclick="spinWheel(1)">▶ Girar</button>
         </div>
 
-        <!-- Ruleta 3: Retos Creativos — centro -->
-        <div class="ruleta-item" style="top: 34%; left: 50%; transform: translateX(-50%);">
-            <canvas class="ruleta-canvas" id="ruleta-2" width="440" height="440"></canvas>
-            <button class="ruleta-btn" onclick="spinWheel(2)">▶ Girar</button>
-            <div class="ruleta-result" id="result-2"></div>
+        <div class="ruleta-item">
+            <div class="ruleta-wrap">
+                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
+                <canvas class="ruleta-canvas" id="ruleta-2" width="340" height="340"></canvas>
+                <div class="ruleta-resultado" id="result-2"></div>
+            </div>
             <span class="ruleta-tema">Retos Creativos</span>
+            <button class="ruleta-btn" onclick="spinWheel(2)">▶ Girar</button>
         </div>
 
-        <!-- Ruleta 4: Retos de Comida — abajo izquierda -->
-        <div class="ruleta-item" style="bottom: 4%; left: 2%;">
-            <canvas class="ruleta-canvas" id="ruleta-3" width="370" height="370"></canvas>
-            <button class="ruleta-btn" onclick="spinWheel(3)">▶ Girar</button>
-            <div class="ruleta-result" id="result-3"></div>
+    </div>
+</section>
+
+<!-- RULETAS - SECCIÓN 2 -->
+<section class="section-ruletas">
+    <div class="ruletas-grid">
+
+        <div class="ruleta-item">
+            <div class="ruleta-wrap">
+                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
+                <canvas class="ruleta-canvas" id="ruleta-3" width="340" height="340"></canvas>
+                <div class="ruleta-resultado" id="result-3"></div>
+            </div>
             <span class="ruleta-tema">Retos de Comida</span>
+            <button class="ruleta-btn" onclick="spinWheel(3)">▶ Girar</button>
         </div>
 
-        <!-- Ruleta 5: Retos de Tecnología — abajo derecha -->
-        <div class="ruleta-item" style="bottom: 3%; right: 1%;">
-            <canvas class="ruleta-canvas" id="ruleta-4" width="360" height="360"></canvas>
-            <button class="ruleta-btn" onclick="spinWheel(4)">▶ Girar</button>
-            <div class="ruleta-result" id="result-4"></div>
+        <div class="ruleta-item">
+            <div class="ruleta-wrap">
+                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
+                <canvas class="ruleta-canvas" id="ruleta-4" width="340" height="340"></canvas>
+                <div class="ruleta-resultado" id="result-4"></div>
+            </div>
             <span class="ruleta-tema">Retos de Tecnología</span>
+            <button class="ruleta-btn" onclick="spinWheel(4)">▶ Girar</button>
+        </div>
+
+        <div class="ruleta-item">
+            <div class="ruleta-wrap">
+                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
+                <canvas class="ruleta-canvas" id="ruleta-5" width="340" height="340"></canvas>
+                <div class="ruleta-resultado" id="result-5"></div>
+            </div>
+            <span class="ruleta-tema">Retos de Pareja</span>
+            <button class="ruleta-btn" onclick="spinWheel(5)">▶ Girar</button>
         </div>
 
     </div>
