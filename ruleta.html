@@ -9,127 +9,297 @@
 </head>
 <body>
 
-<section class="hero hero--ruleta">
-    <header class="header">
-        <div class="container">
-            <div class="header__logo">
-                <a href="index.html" class="logo"><img src="assets/milli_logo.png" alt="Milli" class="header-logo-img"></a>
+    <section class="hero hero--ruleta">
+        <header class="header">
+            <div class="container">
+                <div class="header__logo">
+                    <a href="index.html" class="logo"><img src="assets/milli_logo.png" alt="Milli" class="header-logo-img"></a>
+                </div>
+                <nav class="nav">
+            <a href="comunidad.html" class="nav-link">Community</a>
+            <a href="ruleta.html" class="nav-link active">Challenges</a>
+            <a href="about.html" class="nav-link">About Milli</a>
+            <a href="socialmedia.html" class="nav-link">Social Media</a>
+                </nav>
             </div>
-            <nav class="nav">
-                <a href="comunidad.html" class="nav-link">Community</a>
-                <a href="ruleta.html" class="nav-link active">Challenges</a>
-                <a href="about.html" class="nav-link">About Milli</a>
-                <a href="socialmedia.html" class="nav-link">Social Media</a>
-            </nav>
+        </header>
+        <div class="hero__title">
+            <h1 class="page-title">CHALLENGES</h1>
         </div>
-    </header>
-    <div class="hero__title">
-        <h1 class="page-title">CHALLENGES</h1>
+        <a class="hero__scroll-indicator" href="#main-content">
+            <span>↓</span>
+        </a>
+    </section>
+
+    <!-- RULETAS - SECCIÓN 1 -->
+    <section id="main-content" class="section-ruletas">
+        <div class="ruletas-grid">
+
+            <div class="ruleta-item">
+                <div class="ruleta-wrap">
+                    <canvas class="ruleta-canvas" id="ruleta-0"></canvas>
+                    <div class="ruleta-resultado" id="result-0"></div>
+                </div>
+                <span class="ruleta-tema">Retos Físicos</span>
+                <button class="ruleta-btn" onclick="spinWheel(0)">▶ Girar</button>
+            </div>
+
+            <div class="ruleta-item">
+                <div class="ruleta-wrap">
+                    <canvas class="ruleta-canvas" id="ruleta-1"></canvas>
+                    <div class="ruleta-resultado" id="result-1"></div>
+                </div>
+                <span class="ruleta-tema">Retos Sociales</span>
+                <button class="ruleta-btn" onclick="spinWheel(1)">▶ Girar</button>
+            </div>
+
+            <div class="ruleta-item">
+                <div class="ruleta-wrap">
+                    <canvas class="ruleta-canvas" id="ruleta-2"></canvas>
+                    <div class="ruleta-resultado" id="result-2"></div>
+                </div>
+                <span class="ruleta-tema">Retos Creativos</span>
+                <button class="ruleta-btn" onclick="spinWheel(2)">▶ Girar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RULETAS - SECCIÓN 2 -->
+    <section class="section-ruletas">
+        <div class="ruletas-grid">
+
+            <div class="ruleta-item">
+                <div class="ruleta-wrap">
+                    <canvas class="ruleta-canvas" id="ruleta-3"></canvas>
+                    <div class="ruleta-resultado" id="result-3"></div>
+                </div>
+                <span class="ruleta-tema">Retos de Comida</span>
+                <button class="ruleta-btn" onclick="spinWheel(3)">▶ Girar</button>
+            </div>
+
+            <div class="ruleta-item">
+                <div class="ruleta-wrap">
+                    <canvas class="ruleta-canvas" id="ruleta-4"></canvas>
+                    <div class="ruleta-resultado" id="result-4"></div>
+                </div>
+                <span class="ruleta-tema">Retos de Tecnología</span>
+                <button class="ruleta-btn" onclick="spinWheel(4)">▶ Girar</button>
+            </div>
+
+            <div class="ruleta-item">
+                <div class="ruleta-wrap">
+                    <canvas class="ruleta-canvas" id="ruleta-5"></canvas>
+                    <div class="ruleta-resultado" id="result-5"></div>
+                </div>
+                <span class="ruleta-tema">Retos de Pareja</span>
+                <button class="ruleta-btn" onclick="spinWheel(5)">▶ Girar</button>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- TEST DE PERSONALIDAD -->
+    <section class="section-test">
+        <div class="test-box" id="test-box">
+            <div class="test-header">
+                <h2>¿Qué canción de MILLI eres?</h2>
+                <p>Responde 10 preguntas y descubre qué canción define tu personalidad</p>
+            </div>
+
+            <!-- PANTALLA INICIO -->
+            <div id="test-intro">
+                <p style="color:var(--text-light);margin:var(--spacing-md) 0 var(--spacing-xl);line-height:1.7;text-align:center;">10 preguntas sobre tu personalidad, actitud y estilo.<br>Al final descubrirás qué canción de MILLI te define.</p>
+                <div style="text-align:center;">
+                    <button class="test-restart" onclick="iniciarTest()">Empezar el test</button>
+                </div>
+            </div>
+
+            <!-- BARRA PROGRESO -->
+            <div class="test-progress" id="test-progress" style="display:none;">
+                <div class="test-progress__dot"></div>
+                <div class="test-progress__dot"></div>
+                <div class="test-progress__dot"></div>
+                <div class="test-progress__dot"></div>
+                <div class="test-progress__dot"></div>
+                <div class="test-progress__dot"></div>
+                <div class="test-progress__dot"></div>
+                <div class="test-progress__dot"></div>
+                <div class="test-progress__dot"></div>
+                <div class="test-progress__dot"></div>
+            </div>
+
+            <!-- PREGUNTAS -->
+                <div class="test-question" id="pregunta-0">
+                    <h3><span>Pregunta 1 de 10</span>¿Cómo defines tu energía en una fiesta?</h3>
+                    <div class="test-options">
+                        <button class="test-option" onclick="elegirOpcion(0,0)">Soy el centro de atención</button>
+                        <button class="test-option" onclick="elegirOpcion(0,1)">Observo antes de soltar mi mejor movimiento</button>
+                        <button class="test-option" onclick="elegirOpcion(0,2)">Paso desapercibida pero lo recordarás</button>
+                        <button class="test-option" onclick="elegirOpcion(0,3)">Me voy antes de que acabe — tengo cosas que hacer</button>
+                    </div>
+                </div>
+                <div class="test-question" id="pregunta-1">
+                    <h3><span>Pregunta 2 de 10</span>¿Cuál es tu actitud ante los haters?</h3>
+                    <div class="test-options">
+                        <button class="test-option" onclick="elegirOpcion(1,0)">Les ignoro, mi éxito habla por mí</button>
+                        <button class="test-option" onclick="elegirOpcion(1,1)">Les doy un show que no olvidarán</button>
+                        <button class="test-option" onclick="elegirOpcion(1,2)">Los analizo y aprendo de ellos</button>
+                        <button class="test-option" onclick="elegirOpcion(1,3)">Me motivan a ir a por más</button>
+                    </div>
+                </div>
+                <div class="test-question" id="pregunta-2">
+                    <h3><span>Pregunta 3 de 10</span>¿Qué pides en un restaurante thai?</h3>
+                    <div class="test-options">
+                        <button class="test-option" onclick="elegirOpcion(2,0)">Mango sticky rice, por supuesto</button>
+                        <button class="test-option" onclick="elegirOpcion(2,1)">Lo más picante del menú</button>
+                        <button class="test-option" onclick="elegirOpcion(2,2)">Lo que nadie más pide</button>
+                        <button class="test-option" onclick="elegirOpcion(2,3)">Lo que recomienda el chef</button>
+                    </div>
+                </div>
+                <div class="test-question" id="pregunta-3">
+                    <h3><span>Pregunta 4 de 10</span>¿Cuál es tu superpoder?</h3>
+                    <div class="test-options">
+                        <button class="test-option" onclick="elegirOpcion(3,0)">Cautivar a cualquiera en segundos</button>
+                        <button class="test-option" onclick="elegirOpcion(3,1)">Golpear fuerte cuando menos lo esperan</button>
+                        <button class="test-option" onclick="elegirOpcion(3,2)">Transformarme según la situación</button>
+                        <button class="test-option" onclick="elegirOpcion(3,3)">Nunca rendirme</button>
+                    </div>
+                </div>
+                <div class="test-question" id="pregunta-4">
+                    <h3><span>Pregunta 5 de 10</span>¿Cómo describes tu estilo?</h3>
+                    <div class="test-options">
+                        <button class="test-option" onclick="elegirOpcion(4,0)">Dulce pero letal</button>
+                        <button class="test-option" onclick="elegirOpcion(4,1)">Duro y sin excusas</button>
+                        <button class="test-option" onclick="elegirOpcion(4,2)">Cambia según el día</button>
+                        <button class="test-option" onclick="elegirOpcion(4,3)">Clásico con un giro inesperado</button>
+                    </div>
+                </div>
+                <div class="test-question" id="pregunta-5">
+                    <h3><span>Pregunta 6 de 10</span>¿Qué haces cuando algo va mal?</h3>
+                    <div class="test-options">
+                        <button class="test-option" onclick="elegirOpcion(5,0)">Lo proceso sola y sigo adelante</button>
+                        <button class="test-option" onclick="elegirOpcion(5,1)">Me enfado y lo uso como combustible</button>
+                        <button class="test-option" onclick="elegirOpcion(5,2)">Busco el mensaje detrás del problema</button>
+                        <button class="test-option" onclick="elegirOpcion(5,3)">Me reinvento completamente</button>
+                    </div>
+                </div>
+                <div class="test-question" id="pregunta-6">
+                    <h3><span>Pregunta 7 de 10</span>¿Cuál es tu relación con las redes sociales?</h3>
+                    <div class="test-options">
+                        <button class="test-option" onclick="elegirOpcion(6,0)">Las uso para mostrar mi mundo sin filtros</button>
+                        <button class="test-option" onclick="elegirOpcion(6,1)">Publico poco pero siempre impacto</button>
+                        <button class="test-option" onclick="elegirOpcion(6,2)">Me obsesiona analizar los números</button>
+                        <button class="test-option" onclick="elegirOpcion(6,3)">Prefiero vivir el momento</button>
+                    </div>
+                </div>
+                <div class="test-question" id="pregunta-7">
+                    <h3><span>Pregunta 8 de 10</span>¿Qué canción pondría tu alter ego?</h3>
+                    <div class="test-options">
+                        <button class="test-option" onclick="elegirOpcion(7,0)">Una que te haga moverse sin querer</button>
+                        <button class="test-option" onclick="elegirOpcion(7,1)">Una que deje claro quién manda</button>
+                        <button class="test-option" onclick="elegirOpcion(7,2)">Una que te haga pensar</button>
+                        <button class="test-option" onclick="elegirOpcion(7,3)">Una que te rompa por dentro</button>
+                    </div>
+                </div>
+                <div class="test-question" id="pregunta-8">
+                    <h3><span>Pregunta 9 de 10</span>¿Qué buscas en una colaboración?</h3>
+                    <div class="test-options">
+                        <button class="test-option" onclick="elegirOpcion(8,0)">Química instantánea</button>
+                        <button class="test-option" onclick="elegirOpcion(8,1)">Alguien que me desafíe</button>
+                        <button class="test-option" onclick="elegirOpcion(8,2)">Complementariedad total</button>
+                        <button class="test-option" onclick="elegirOpcion(8,3)">Independencia dentro del proyecto</button>
+                    </div>
+                </div>
+                <div class="test-question" id="pregunta-9">
+                    <h3><span>Pregunta 10 de 10</span>¿Cómo quieres que te recuerden?</h3>
+                    <div class="test-options">
+                        <button class="test-option" onclick="elegirOpcion(9,0)">Como alguien que cambió las reglas del juego</button>
+                        <button class="test-option" onclick="elegirOpcion(9,1)">Como alguien auténtica y sin igual</button>
+                        <button class="test-option" onclick="elegirOpcion(9,2)">Como alguien que siempre estuvo ahí</button>
+                        <button class="test-option" onclick="elegirOpcion(9,3)">Como un enigma que nunca se resolvió del todo</button>
+                    </div>
+                </div>
+
+            <!-- NAVEGACIÓN -->
+            <div class="test-nav" id="test-nav" style="display:none;">
+                <button class="test-nav__btn" id="btn-prev" onclick="retroceder()">← Anterior</button>
+                <button class="test-nav__btn test-nav__btn--next" id="btn-next" onclick="avanzar()">Siguiente →</button>
+                <button class="test-nav__btn test-nav__btn--fin" id="btn-fin" onclick="finalizarTest()" style="display:none;">Finalizar test ✓</button>
+            </div>
+
+            <!-- RESULTADO -->
+            <div class="test-result" id="test-result">
+                <p style="color:var(--text-light);font-size:0.9rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;">Tu canción es</p>
+                <span class="test-result__emoji"></span>
+                <div class="test-result__song"></div>
+                <p class="test-result__desc"></p>
+                <button class="test-restart" onclick="reiniciarTest()">Volver a empezar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <!-- Columna izquierda: legal -->
+            <div class="footer__col">
+                <p class="footer__heading">Legal</p>
+                <a href="aviso-legal.html">Aviso Legal</a>
+                <a href="privacidad.html">Política de Privacidad</a>
+                <a href="cookies.html">Cookies</a>
+            </div>
+
+            <!-- Centro: logo -->
+            <div class="footer__col footer__col--center">
+                <a href="index.html">
+                    <img src="assets/milli_logo.png" alt="Milli" class="footer__logo">
+                </a>
+            </div>
+
+            <!-- Columna derecha: contacto y redes -->
+            <div class="footer__col footer__col--right">
+                <p class="footer__heading">Contacto</p>
+                <a href="contacto.html">Contacto</a>
+                <div class="footer__social">
+                    <a href="https://www.instagram.com/phuckitol/?hl=es" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@milliyormlenlaew?lang=es-419" target="_blank" aria-label="TikTok">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCV_Y9Omqr0Zlwt3vJhbib9w" target="_blank" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7s-.3-1.9-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.6 3 12 3 12 3s-4.6 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5.2 1 7 1 7S.7 9.1.7 11.3v2c0 2.1.3 4.3.3 4.3s.3 1.9 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.3 21.7 12 21.7 12 21.7s4.6 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.7 1.2-2.7s.3-2.1.3-4.3v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg>
+                    </a>
+                    <a href="https://open.spotify.com/intl-es/artist/1eVPKI2R4NlX6P5FIuMXis" target="_blank" aria-label="Spotify">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                    </a>
+                    <a href="https://music.apple.com/es/playlist/milli-imprescindibles/pl.f570f95bd34e48978a4f45f1392bc159" target="_blank" aria-label="Apple Music">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 0 0-1.877-.726 10.496 10.496 0 0 0-1.564-.15c-.05-.003-.096-.01-.15-.01H5.986c-.05 0-.096.007-.15.01a10.5 10.5 0 0 0-1.564.15 5.022 5.022 0 0 0-1.877.726C1.276 1.624.53 2.625.214 3.934A9.23 9.23 0 0 0 0 6.124v11.85a9.23 9.23 0 0 0 .24 2.19c.317 1.31 1.062 2.31 2.18 3.043a5.022 5.022 0 0 0 1.877.726 10.5 10.5 0 0 0 1.564.15c.05.003.096.01.15.01h12.02c.05 0 .096-.007.15-.01a10.5 10.5 0 0 0 1.564-.15 5.022 5.022 0 0 0 1.877-.726c1.118-.734 1.863-1.734 2.18-3.043a9.23 9.23 0 0 0 .214-2.19V6.124zm-6.9 3.99l-4.24 2.452v4.905l-1.68-.97V8.386l5.92 1.728z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Milli. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>Utilizamos cookies para mejorar tu experiencia.</p>
+            <div class="cookie-buttons">
+                <button id="acceptCookies" class="btn btn-primary">Aceptar</button>
+                <button id="rejectCookies" class="btn btn-secondary">Rechazar</button>
+            </div>
+        </div>
     </div>
-    <a class="hero__scroll-indicator" href="#main-content">
-        <span>↓</span>
-    </a>
-</section>
 
-<!-- RULETAS - SECCIÓN 1 -->
-<section id="main-content" class="section-ruletas">
-    <div class="ruletas-grid">
-
-        <div class="ruleta-item">
-            <div class="ruleta-wrap">
-                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
-                <canvas class="ruleta-canvas" id="ruleta-0" width="340" height="340"></canvas>
-                <div class="ruleta-resultado" id="result-0"></div>
-            </div>
-            <span class="ruleta-tema">Retos Físicos</span>
-            <button class="ruleta-btn" onclick="spinWheel(0)">▶ Girar</button>
-        </div>
-
-        <div class="ruleta-item">
-            <div class="ruleta-wrap">
-                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
-                <canvas class="ruleta-canvas" id="ruleta-1" width="340" height="340"></canvas>
-                <div class="ruleta-resultado" id="result-1"></div>
-            </div>
-            <span class="ruleta-tema">Retos Sociales</span>
-            <button class="ruleta-btn" onclick="spinWheel(1)">▶ Girar</button>
-        </div>
-
-        <div class="ruleta-item">
-            <div class="ruleta-wrap">
-                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
-                <canvas class="ruleta-canvas" id="ruleta-2" width="340" height="340"></canvas>
-                <div class="ruleta-resultado" id="result-2"></div>
-            </div>
-            <span class="ruleta-tema">Retos Creativos</span>
-            <button class="ruleta-btn" onclick="spinWheel(2)">▶ Girar</button>
-        </div>
-
-    </div>
-</section>
-
-<!-- RULETAS - SECCIÓN 2 -->
-<section class="section-ruletas">
-    <div class="ruletas-grid">
-
-        <div class="ruleta-item">
-            <div class="ruleta-wrap">
-                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
-                <canvas class="ruleta-canvas" id="ruleta-3" width="340" height="340"></canvas>
-                <div class="ruleta-resultado" id="result-3"></div>
-            </div>
-            <span class="ruleta-tema">Retos de Comida</span>
-            <button class="ruleta-btn" onclick="spinWheel(3)">▶ Girar</button>
-        </div>
-
-        <div class="ruleta-item">
-            <div class="ruleta-wrap">
-                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
-                <canvas class="ruleta-canvas" id="ruleta-4" width="340" height="340"></canvas>
-                <div class="ruleta-resultado" id="result-4"></div>
-            </div>
-            <span class="ruleta-tema">Retos de Tecnología</span>
-            <button class="ruleta-btn" onclick="spinWheel(4)">▶ Girar</button>
-        </div>
-
-        <div class="ruleta-item">
-            <div class="ruleta-wrap">
-                <img src="assets/contorno_ruleta.png" class="ruleta-contorno" alt="">
-                <canvas class="ruleta-canvas" id="ruleta-5" width="340" height="340"></canvas>
-                <div class="ruleta-resultado" id="result-5"></div>
-            </div>
-            <span class="ruleta-tema">Retos de Pareja</span>
-            <button class="ruleta-btn" onclick="spinWheel(5)">▶ Girar</button>
-        </div>
-
-    </div>
-</section>
-
-
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="container footer__inner">
-        <p>&copy; 2024 RetoRuleta</p>
-        <div class="footer-links">
-            <a href="#">Aviso Legal</a>
-            <a href="#">Privacidad</a>
-            <a href="#">Cookies</a>
-        </div>
-    </div>
-</footer>
-
-<div id="cookieBanner" class="cookie-banner">
-    <div class="cookie-content">
-        <p>Utilizamos cookies para mejorar tu experiencia.</p>
-        <div class="cookie-buttons">
-            <button id="acceptCookies" class="btn btn-primary">Aceptar</button>
-            <button id="rejectCookies" class="btn btn-secondary">Rechazar</button>
-        </div>
-    </div>
-</div>
-
-<script>
+    <script>
     var RULETAS = [
         { retos: ['10 sentadillas','Plancha 30s','20 saltos','Puntillas 1min','Baila 2min','15 flexiones','Corre en sitio','Equilibrio 30s'] },
         { retos: ['Llama a un amigo','Manda un meme','Pregunta incómoda','Di un cumplido','Imita a alguien','Cuenta un chiste','Foto con extraño','Karaoke improv'] },
@@ -232,7 +402,11 @@
     window.onload = function() {
         for (var i = 0; i < 5; i++) drawWheel(i);
     };
-</script>
-<script src="js/main.js"></script>
+    </script>
+    <script src="js/cookies.js"></script>
+    <script src="js/backtotop.js"></script>
+    <script src="js/ruletas.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
