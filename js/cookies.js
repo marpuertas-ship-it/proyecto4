@@ -1,18 +1,12 @@
 (function() {
     function showBanner() {
         var banner = document.getElementById('cookieBanner');
-        if (banner) {
-            banner.style.display = 'block';
-            setTimeout(function() { banner.classList.add('visible'); }, 50);
-        }
+        if (banner) banner.classList.add('visible');
     }
 
     function hideBanner() {
         var banner = document.getElementById('cookieBanner');
-        if (banner) {
-            banner.classList.remove('visible');
-            setTimeout(function() { banner.style.display = 'none'; }, 400);
-        }
+        if (banner) banner.classList.remove('visible');
     }
 
     function setCookieChoice(choice) {
@@ -26,7 +20,6 @@
     };
 
     function init() {
-        // Bind buttons
         var acceptBtn = document.getElementById('acceptCookies');
         var rejectBtn = document.getElementById('rejectCookies');
         var configBtn = document.getElementById('configCookies');
@@ -34,7 +27,6 @@
         if (rejectBtn) rejectBtn.addEventListener('click', function() { setCookieChoice('rejected'); });
         if (configBtn) configBtn.addEventListener('click', function() { window.location.href = 'cookies.html'; });
 
-        // Show if not decided yet
         if (!localStorage.getItem('rr_cookies')) {
             setTimeout(showBanner, 1000);
         }

@@ -36,8 +36,8 @@ function handleRegistro() {
     if (existe) { feedback('Ya existe una cuenta con ese email.', 'error'); return; }
     usuarios.push({ nombre: nombre, email: email, pass: pass });
     localStorage.setItem('rr_usuarios', JSON.stringify(usuarios));
-    feedback('¡Cuenta creada! Ya puedes iniciar sesión 🎉', 'ok');
-    setTimeout(function() { switchTab('login'); }, 1500);
+    feedback('¡Cuenta creada! Redirigiendo...', 'ok');
+    setTimeout(function() { window.location.href = 'comunidad-preview.html'; }, 1200);
 }
 
 function handleLogin() {
@@ -50,5 +50,6 @@ function handleLogin() {
     var usuario  = usuarios.find(function(u) { return u.email === email && u.pass === pass; });
     if (!usuario) { feedback('Email o contraseña incorrectos.', 'error'); return; }
     localStorage.setItem('rr_sesion', JSON.stringify(usuario));
-    feedback('¡Bienvenid@ ' + usuario.nombre + '! 🎉', 'ok');
+    feedback('¡Bienvenid@ ' + usuario.nombre + '!', 'ok');
+    setTimeout(function() { window.location.href = 'comunidad-preview.html'; }, 1200);
 }
