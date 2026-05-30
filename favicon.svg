@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="32" fill="#df9a31"/>
+  <circle cx="32" cy="32" r="26" fill="white" stroke="#704b93" stroke-width="3"/>
+  <!-- Divider lines like the ruleta -->
+  <line x1="32" y1="6" x2="32" y2="58" stroke="#704b93" stroke-width="2.5"/>
+  <line x1="6" y1="32" x2="58" y2="32" stroke="#704b93" stroke-width="2.5"/>
+  <line x1="13.7" y1="13.7" x2="50.3" y2="50.3" stroke="#704b93" stroke-width="2.5"/>
+  <line x1="50.3" y1="13.7" x2="13.7" y2="50.3" stroke="#704b93" stroke-width="2.5"/>
+  <!-- Center dot -->
+  <circle cx="32" cy="32" r="4" fill="#704b93"/>
+  <circle cx="32" cy="32" r="2" fill="white"/>
+</svg>

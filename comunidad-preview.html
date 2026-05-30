@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community - Milli</title>
     <link rel="stylesheet" href="css/main.css">
@@ -23,12 +24,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 2rem;
+            padding: 0.5rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
+            gap: 1.5rem;
         }
-        .app-topbar__logo img { height: 38px; }
+        .app-topbar__left { display: flex; align-items: center; }
+        .app-topbar__logo-img { height: 50px; width: auto; object-fit: contain; display: block; }
         .app-topbar__search {
             flex: 1;
             max-width: 400px;
@@ -421,13 +424,13 @@
 
     <!-- TOPBAR -->
     <header class="app-topbar">
-        <div class="app-topbar__logo">
-            <a href="index.html"><img src="assets/milli_logo.png" alt="Milli"></a>
+        <div class="app-topbar__left">
+            <a href="index.html"><img src="assets/milli_logo.png" alt="Milli" class="app-topbar__logo-img"></a>
         </div>
         <input class="app-topbar__search" type="text" placeholder="Buscar en la comunidad...">
         <div class="app-topbar__user">
             <div class="app-topbar__notif">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
                 <span class="notif-badge">3</span>
             </div>
             <div class="app-topbar__avatar">MX</div>
